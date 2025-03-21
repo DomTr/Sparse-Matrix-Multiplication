@@ -1,0 +1,2 @@
+void scalar_multiplication_simd(float a_val, float *b_row_vector, const uint64_t *b_row_indices, float *result_row_vector, uint64_t b_ellpack_cols);
+void sequential_multiplication(const void *a, const void *b, void *result);

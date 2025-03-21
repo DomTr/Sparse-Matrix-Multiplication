@@ -1,0 +1,5 @@
+#ifndef GRA24CAPSPROJEKT_T009_TEST_H
+#define GRA24CAPSPROJEKT_T009_TEST_H
+int execute_tests(int version);
+
+#endif //GRA24CAPSPROJEKT_T009_TEST_H

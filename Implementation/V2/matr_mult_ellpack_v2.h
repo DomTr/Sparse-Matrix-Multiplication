@@ -5,8 +5,9 @@
 #include "../utils.h"
 #include "../optimizations.h"
 
-//ThreadData struct
-typedef struct{
+// ThreadData struct
+typedef struct
+{
     uint64_t start;
     uint64_t end;
     EllpackMatrix *a_matrix;

@@ -8,13 +8,18 @@ EXEC = matrix_multiplication
 all: $(EXEC) 
 
 $(EXEC): main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
-	$(CC) $(CFLAGS) -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
+	$(CC) $(CFLAGS) -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c -lpthread
+
+# added -lpthread flag to make the code compile
 
 debug: main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
-	$(CC) $(CFLAGS) -g -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
+	$(CC) $(CFLAGS) -g -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c -lpthread
 
+# added -lpthread flag to make the code compile
 asan: main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
-	$(CC) $(CFLAGS) -fsanitize=address -g -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c
+	$(CC) $(CFLAGS) -fsanitize=address -g -o $(EXEC) main.c V0/matr_mult_ellpack.c V1/matr_mult_ellpack_v1.c V2/matr_mult_ellpack_v2.c utils.c optimizations.c testing_functions.c -lpthread
+
+# added -lpthread flag to make the code compile
 clean:
 	@echo "Clean up"
 	rm -f $(EXEC)
